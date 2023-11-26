@@ -1,6 +1,12 @@
 const mix = require('laravel-mix');
+const VitePlugin = require('vite-plugin-vue2');
 
 mix.js('resources/js/app.js', 'public/js')
+.vue()
+   .vite({
+      plugins: [VitePlugin()],
+   })
+   .version()
    .sass('resources/sass/app.scss', 'public/css')
    .sourceMaps();
 
